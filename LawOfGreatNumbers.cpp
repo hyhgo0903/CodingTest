@@ -17,7 +17,10 @@ public:
     int biggest = intVector[size - 1];
     int secondBiggest = intVector[size - 2];
     int gap = biggest - secondBiggest;
-    int result = biggest * m - gap * m / (k + 1);
+
+    // 수학을 이용하여 풀었지만 이렇게 풀리는 경우는 적음. 한 단계 씩 진행하는게 옳을 때가 많다
+    int secondBiggestUsedCount = m / (k + 1);
+    int result = biggest * m - secondBiggestUsedCount * gap;
 
     cout << "결과: " << result << endl;
   }
