@@ -24,5 +24,8 @@
     <ClCompile Include="Changes.cpp">
       <Filter>Source Files\Greedy</Filter>
     </ClCompile>
+    <ClCompile Include="LawOfGreatNumbers.cpp">
+      <Filter>Source Files\Greedy</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
