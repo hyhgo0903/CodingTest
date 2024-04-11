@@ -131,6 +131,9 @@
     <ClCompile Include="Changes.cpp" />
     <ClCompile Include="LawOfGreatNumbers.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CodingTest.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

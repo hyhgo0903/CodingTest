@@ -1,5 +1,4 @@
-﻿#include "Changes.cpp"
-#include "LawOfGreatNumbers.cpp"
+﻿#include "CodingTest.h"
 
 int main()
 {
