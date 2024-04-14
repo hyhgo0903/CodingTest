@@ -1,5 +1,4 @@
 #include "Greedy.h"
-using namespace std;
 
 // 큰 단위부터 수행하는 규칙. 그리디의 대표 예시
 
