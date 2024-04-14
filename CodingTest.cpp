@@ -3,9 +3,6 @@ using namespace std;
 
 int main()
 {
-  Changes changes;
-  changes.Start(1260);
-
-  LawOfGreatNumbers gn;
-  gn.Start(8, 3, vector<int> { 2, 4, 5, 4, 6 });
+  Changes changes{ 1260 };
+  LawOfGreatNumbers gn(8, 3, vector<int> { 2, 4, 5, 4, 6 });
 }

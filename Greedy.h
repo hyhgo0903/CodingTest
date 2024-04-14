@@ -5,13 +5,30 @@ using namespace std;
 
 class Changes
 {
+    int _number;
 public:
-    void Start(int);
+    Changes(int number)
+    {
+        _number = number;
+        Start();
+    }
+
+    void Start();
 };
 
 class LawOfGreatNumbers
 {
-public:
     // n은 필요하지 않아 생략했음
-    void Start(int, int, vector<int>);
+    int _m, _k;
+    vector<int> _numList;
+public:
+    LawOfGreatNumbers(int m, int k, vector<int> numList)
+    {
+        _m = m;
+        _k = k;
+        _numList = numList;
+        Start();
+    }
+
+    void Start();
 };
