@@ -7,7 +7,7 @@ class Changes
 {
     int _number;
 public:
-    Changes(int number)
+    Changes(int number = 1260)
     {
         _number = number;
         Start();
@@ -20,14 +20,16 @@ class LawOfGreatNumbers
 {
     // n은 필요하지 않아 생략했음
     int _m, _k;
-    vector<int> _numList;
+    vector<int>* _numList;
 public:
-    LawOfGreatNumbers(int m, int k, vector<int> numList)
+    LawOfGreatNumbers(int m, int k, vector<int>* numList) : _m{m}, _k{k}, _numList{numList}
     {
-        _m = m;
-        _k = k;
-        _numList = numList;
         Start();
+    }
+
+    ~LawOfGreatNumbers()
+    {
+        delete _numList;
     }
 
     void Start();

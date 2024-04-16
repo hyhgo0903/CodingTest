@@ -32,10 +32,10 @@ void Changes::Start()
 
 void LawOfGreatNumbers::Start()
 {
-    auto size = _numList.size();
-    sort(_numList.begin(), _numList.end());
-    int biggest = _numList[size - 1];
-    int secondBiggest = _numList[size - 2];
+    auto size = _numList->size();
+    sort(_numList->begin(), _numList->end());
+    int biggest = _numList->at(size - 1);
+    int secondBiggest = _numList->at(size - 2);
     int gap = biggest - secondBiggest;
 
     // 수학을 이용하여 풀었지만 이렇게 풀리는 경우는 적음. 한 단계 씩 진행하는게 옳을 때가 많다
