@@ -29,8 +29,25 @@ public:
 
     ~LawOfGreatNumbers()
     {
-        delete _numList;
     }
 
     void Start();
+};
+
+class NumCard
+{
+  int _n, _m;
+  std::unique_ptr<int[]> _intArray;
+
+public:
+  NumCard(int n, int m, int* intArray) : _n{n}, _m{m}, _intArray{ std::make_unique<int[]>(n*m) }
+  {
+    // intArray의 값을 복사하여 동적 배열로 할당
+    for (int i = 0; i < _n; ++i)
+    {
+      _intArray[i] = intArray[i];
+    }
+  }
+
+  void Start();
 };

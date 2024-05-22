@@ -44,3 +44,8 @@ void LawOfGreatNumbers::Start()
 
     cout << "°á°ú: " << result << endl;
 }
+
+void NumCard::Start()
+{
+
+}

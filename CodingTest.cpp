@@ -5,11 +5,11 @@ using namespace std;
 int main()
 {
   Changes changes;
+
   vector<int> *numList = new vector<int>{ 2, 4, 5, 4, 6 };
   LawOfGreatNumbers gn(8, 3, numList);
+  delete numList;
 
-  Camera* s1 = Camera::getInstance();
-  Camera* s2 = Camera::getInstance();
-  s1->capture();
-  s2->capture();
+  int* intArray = new int[9] { 3, 1, 2, 4, 1, 4, 2, 2, 2 };
+  NumCard numCard(3, 3, intArray);
 }
