@@ -47,5 +47,23 @@ void LawOfGreatNumbers::Start()
 
 void NumCard::Start()
 {
+  auto min = -1;
+  for (int i = 0; i < _row; ++i)
+  {
+    int* tempArray = new int[_col];
+    for (int j = 0; j < _col; ++j)
+    {
+      tempArray[j] = _intArray[i * _col + j];
+    }
 
+    sort(tempArray, tempArray + _col);
+    if (min < tempArray[0])
+    {
+      min = tempArray[0];
+    }
+    
+    delete[] tempArray;
+  }
+
+  cout << "°á°ú: " << min << endl;
 }

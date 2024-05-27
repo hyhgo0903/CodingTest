@@ -36,17 +36,19 @@ public:
 
 class NumCard
 {
-  int _n, _m;
+  int _row, _col;
   std::unique_ptr<int[]> _intArray;
 
 public:
-  NumCard(int n, int m, int* intArray) : _n{n}, _m{m}, _intArray{ std::make_unique<int[]>(n*m) }
+  NumCard(int row, int col, int* intArray) : _row{row}, _col{col}, _intArray{ std::make_unique<int[]>(row * col) }
   {
     // intArray의 값을 복사하여 동적 배열로 할당
-    for (int i = 0; i < _n; ++i)
+    for (int i = 0; i < row * col; ++i)
     {
       _intArray[i] = intArray[i];
     }
+
+    Start();
   }
 
   void Start();

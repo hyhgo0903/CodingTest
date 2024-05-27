@@ -10,6 +10,7 @@ int main()
   LawOfGreatNumbers gn(8, 3, numList);
   delete numList;
 
-  int* intArray = new int[9] { 3, 1, 2, 4, 1, 4, 2, 2, 2 };
-  NumCard numCard(3, 3, intArray);
+  int* intArray = new int[12] { 7, 3, 1, 8, 3, 3, 3, 4, 4, 4, 4, 2 };
+  NumCard numCard(3, 4, intArray);
+  delete[] intArray;
 }
