@@ -56,7 +56,11 @@ void NumCard::Start()
       tempArray[j] = _intArray[i * _col + j];
     }
 
-    sort(tempArray, tempArray + _col);
+    // 당연히 기본값은 오름차순이지만 람다함수 연습을 위해
+    sort(
+      tempArray,
+      tempArray + _col,
+      [](const int& lh, const int& rh) { return lh < rh; });
     if (min < tempArray[0])
     {
       min = tempArray[0];
