@@ -53,3 +53,28 @@ public:
 
   void Start();
 };
+
+class UntilOne
+{
+public:
+  UntilOne(int num, int divisionValue)
+  {
+    auto times = 0;
+    while (num > 1)
+    {
+      auto leftover = num % divisionValue;
+      if (leftover == 0)
+      {
+        num /= divisionValue;
+        ++times;
+      }
+      else
+      {
+        num -= leftover;
+        times += leftover;
+      }
+    }
+
+    cout << "°á°ú: " << times << endl;
+  }
+};
