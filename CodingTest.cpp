@@ -16,4 +16,5 @@ int main()
   
   Implementation implementation;
   implementation.UDLR(5, "RRRUDD");
+  implementation.TimeInclude3(5);
 }
