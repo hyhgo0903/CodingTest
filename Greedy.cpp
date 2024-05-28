@@ -11,7 +11,7 @@ void Changes::Start()
     auto amount = _number - _number % 10;
 
     // 사실은 생략해도 결과에 지장없다.
-    cout << "보정된 입력값: " << amount << endl;
+    cout << "보정된 입력값: " << amount << "원. ";
 
     int wonArray[4] = { 500, 100, 50, 10 };
     int countArray[4];
@@ -22,10 +22,7 @@ void Changes::Start()
         amount %= wonArray[i];
     }
 
-    cout << "500원: " << countArray[0] << endl;
-    cout << "100원: " << countArray[1] << endl;
-    cout << "50원: " << countArray[2] << endl;
-    cout << "10원: " << countArray[3] << endl << endl;
+    cout << "결과 : 500원x" << countArray[0] << "/100원x" << countArray[1] << "/50원x" << countArray[2] << "/10원x" << countArray[3] << endl;
 }
 
 // N 번째마다 두 번째 큰 수를 사용하는 방식
