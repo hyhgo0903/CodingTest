@@ -10,4 +10,5 @@ class Implementation
 public:
   void UDLR(int square, string commandList);
   void TimeInclude3(int number);
+  void ChessKnight(string str);
 };

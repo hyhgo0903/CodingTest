@@ -131,3 +131,35 @@ void Implementation::TimeInclude3(int number)
   if (count == count2) cout << "결과: " << count << endl;
   else cout << "실패: 카운트가 불일치합니다. - " << count << "!=" << count2 << endl;
 }
+
+void Implementation::ChessKnight(string str)
+{
+  if (str.length() != 2)
+    return;
+  const int chessSize = 8;
+
+  const int x = (str[0] - 'a');
+  const int y = (str[1] - '1');
+
+  if (x < 0 || y < 0 || x >= chessSize || y >= chessSize)
+    return;
+
+  auto count = 0;
+  const tuple<int, int> commandArray[8]
+  {
+    make_tuple(-2, -1), make_tuple(-2, 1), make_tuple(-1, -2), make_tuple(-1, 2),
+    make_tuple(1, -2), make_tuple(1, 2), make_tuple(2, -1), make_tuple(2, 1)
+  };
+
+  for (auto& tuple : commandArray)
+  {
+    auto simulatedX = x + get<0>(tuple);
+    auto simulatedY = y + get<1>(tuple);
+    if (simulatedX < 0 || simulatedY < 0 || simulatedX >= chessSize || simulatedY >= chessSize)
+      continue;
+    ++count;
+  }
+
+  cout << "결과: " << count << endl;
+}
+
