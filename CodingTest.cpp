@@ -1,5 +1,6 @@
 ﻿#include "Greedy.h"
 #include "Camera.h"
+#include "Implementation.h"
 using namespace std;
 
 int main()
@@ -12,4 +13,7 @@ int main()
   NumCard numCard(3, 4, intArray);
   delete[] intArray;
   UntilOne untilOne(17, 4);
+  
+  Implementation implementation;
+  implementation.UDLR(5, "RRRUDD");
 }
