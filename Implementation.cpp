@@ -91,7 +91,7 @@ void Implementation::TimeInclude3(int number)
   auto count2 = 0;
   auto func = [](string& str)
   {
-    for (char a : str)
+    for (char& a : str)
     {  
       if (a == '3') return true;
     }
