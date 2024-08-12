@@ -163,3 +163,83 @@ void Implementation::ChessKnight(string str)
   cout << "결과: " << count << endl;
 }
 
+void Implementation::Map(int x, int y, int startX, int startY, int startDir, int number[])
+{
+  auto visited = 1;
+  auto currentDir = startDir;
+  auto currentX = startX;
+  auto currentY = startY;
+  const tuple<int, int> dirArray[4] { make_tuple(0, -1), make_tuple(1, 0), make_tuple(0, 1), make_tuple(-1, 0) };
+
+  int** mapArray = new int*[x];
+  for (int i = 0; i < x; ++i)
+  {
+    mapArray[i] = new int[y];
+    for (int j = 0; j < y; ++j)
+    {
+      mapArray[i][j] = number[j * x + i];
+    }
+  }
+
+  mapArray[currentX][currentY] = 2;
+
+  while (true)
+  {
+    // simulate
+    auto found = false;
+    for (int i = 0; i < 4; ++i)
+    {
+      --currentDir;
+      if (currentDir < 0)
+      {
+        currentDir = 3;
+      }
+
+      auto simulatedX = currentX + get<0>(dirArray[currentDir]);
+      auto simulatedY = currentY + get<1>(dirArray[currentDir]);
+
+      if (simulatedX < 0 || simulatedX > x || simulatedY < 0 || simulatedY > y)
+      {
+        continue;
+      }
+
+      if (mapArray[simulatedX][simulatedY] == 0)
+      {
+        found = true;
+        mapArray[simulatedX][simulatedY] = 2;
+        currentX = simulatedX;
+        currentY = simulatedY;
+        break;
+      }
+    }
+
+    if (found)
+    {
+      ++visited;
+      continue;
+    }
+
+    auto backward = (currentDir + 2) % 4;
+    auto simulatedX = currentX + get<0>(dirArray[backward]);
+    auto simulatedY = currentY + get<1>(dirArray[backward]);
+
+    if (simulatedX < 0 || simulatedX > x || simulatedY < 0 || simulatedY > y)
+    {
+      break;
+    }
+
+    if (mapArray[simulatedX][simulatedY] == 1)
+    {
+      break;
+    }
+    else
+    {
+      ++visited;
+      mapArray[simulatedX][simulatedY] = 2;
+      currentX = simulatedX;
+      currentY = simulatedY;
+    }
+  }
+
+  cout << "결과: " << visited << endl;
+}
