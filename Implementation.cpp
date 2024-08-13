@@ -198,7 +198,7 @@ void Implementation::Map(int x, int y, int startX, int startY, int startDir, int
       auto simulatedX = currentX + get<0>(dirArray[currentDir]);
       auto simulatedY = currentY + get<1>(dirArray[currentDir]);
 
-      if (simulatedX < 0 || simulatedX > x || simulatedY < 0 || simulatedY > y)
+      if (simulatedX < 0 || simulatedX >= x || simulatedY < 0 || simulatedY >= y)
       {
         continue;
       }
@@ -223,19 +223,25 @@ void Implementation::Map(int x, int y, int startX, int startY, int startDir, int
     auto simulatedX = currentX + get<0>(dirArray[backward]);
     auto simulatedY = currentY + get<1>(dirArray[backward]);
 
-    if (simulatedX < 0 || simulatedX > x || simulatedY < 0 || simulatedY > y)
+    if (simulatedX < 0 || simulatedX >= x || simulatedY < 0 || simulatedY >= y)
     {
       break;
     }
 
-    if (mapArray[simulatedX][simulatedY] == 1)
-    {
-      break;
-    }
-    else
+    if (mapArray[simulatedX][simulatedY] == 0)
     {
       ++visited;
       mapArray[simulatedX][simulatedY] = 2;
+      currentX = simulatedX;
+      currentY = simulatedY;
+    }
+    else if (mapArray[simulatedX][simulatedY] == 1)
+    {
+      break;
+    }
+    else if (mapArray[simulatedX][simulatedY] == 2)
+    {
+      // 방문했던 곳이므로 칸의 수가 증가한 것은 아니다
       currentX = simulatedX;
       currentY = simulatedY;
     }
