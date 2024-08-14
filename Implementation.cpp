@@ -171,6 +171,8 @@ void Implementation::Map(int x, int y, int startX, int startY, int startDir, int
   auto currentY = startY;
   const tuple<int, int> dirArray[4] { make_tuple(0, -1), make_tuple(1, 0), make_tuple(0, 1), make_tuple(-1, 0) };
 
+  // arr[x][y] 꼴을 위해 이렇게 했지만.. 이차원배열은 앞이 row, 뒤가 col이어야 맞다. 즉 y,x 를 반대로 쓰는 게 정석인 것.
+  // 이거는 일단 수정 없이 넘어가자.. 작동에 문제는 없다.
   int** mapArray = new int*[x];
   for (int i = 0; i < x; ++i)
   {

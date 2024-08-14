@@ -17,21 +17,24 @@ void DFSBFS::ZeroSpace(int x, int y, int arr[])
   cout << "결과: " << count << endl;
 }
 
-void DFSBFS::Maze(int x, int y, int arr[])
+void DFSBFS::Maze(int col, int row, int arr[])
 {
   auto count = 1;
 
-  int** mapArray = new int* [x];
-  for (int i = 0; i < x; ++i)
+  int** mapArray = new int* [col];
+  for (int i = 0; i < col; ++i)
   {
-    mapArray[i] = new int[y];
-    for (int j = 0; j < y; ++j)
+    mapArray[i] = new int[row];
+    for (int j = 0; j < row; ++j)
     {
-      mapArray[i][j] = arr[j * x + i];
+      mapArray[i][j] = arr[j * col + i];
     }
   }
 
-  // 일단 내 식대로 (한번씩 다 돌면 될 듯)
-
   cout << "결과: " << count << endl;
+}
+
+void dfs(int x, int y, int col, int row, int arr[])
+{
+
 }

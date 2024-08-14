@@ -18,5 +18,5 @@ int main()
   implementation.UDLR(5, "RRRUDD");
   implementation.TimeInclude3(5);
   implementation.ChessKnight("f2");
-  implementation.Map(4, 4, 1, 1, 0, new int[16] { 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1});
+  implementation.Map(4, 5, 1, 1, 0, new int[20] { 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1});
 }
