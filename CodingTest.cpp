@@ -8,6 +8,13 @@ int main()
   Changes changes;
   vector<int> *numList = new vector<int>{ 2, 4, 5, 4, 6 };
   LawOfGreatNumbers gn(8, 3, numList);
+
+  Camera* s1 = Camera::getInstance();
+  Camera* s2 = Camera::getInstance();
+  s1->capture();
+  s2->capture();
+
+  s1->see<>(3.14);
   delete numList;
   int* intArray = new int[12] { 7, 3, 1, 8, 3, 3, 3, 4, 4, 4, 4, 2 };
   NumCard numCard(3, 4, intArray);
