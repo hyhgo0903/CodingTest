@@ -12,4 +12,6 @@ int main()
   Camera* s2 = Camera::getInstance();
   s1->capture();
   s2->capture();
+
+  s1->see<>(3.14);
 }
